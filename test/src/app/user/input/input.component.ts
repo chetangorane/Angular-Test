@@ -19,6 +19,14 @@ export class InputComponent implements OnInit {
   constructor(private fb: FormBuilder, private router: Router) { }
 
   ngOnInit() {
+    this.registrationForm;
+    
   }
+
+  onSubmit(){
+    console.log(this.registrationForm.value);
+
+  }
+
 
 }

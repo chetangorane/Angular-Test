@@ -3,23 +3,27 @@
         <div class="card ">
             <div class="card-header"> Registration Form </div>
             <div class="card-body">
-                <form action="" [formGroup]="registrationForm">
-                    <div class="form-group row">
-                        <label for="name" class="col-sm-3"> Name </label>
-                        <div class="col-sm-8">
+                <form action="" [formGroup]="registrationForm" (ngSubmit)="onSubmit()" >
+                    <div class="form-group row" >
+                        <label for="name" class="col-4"> Name </label>
+                        <div class="col-8">
                             <input type="text" id="name" class="form-control" placeholder="Name" formControlName="name"
                                 required>
-                            <div *ngIf="submited && registrationForm.controls.name.errors?.required"
+                                <div class="help-block">
+                            <div *ngIf="(registrationForm.get('name').touched || registrationForm.get('name').dirty) && registrationForm.controls.name.errors?.required"
                                 class="alert alert-danger">
                                 Name is required!
                             </div>
                         </div>
+                        </div>
                     </div>
                     <div class="form-group row">
-                        <label for="email" class="col-sm-3"> Email </label>
-                        <div class="col-sm-8">
+                        <!-- <div class="row"> -->
+                        <label for="email" class="col-4"> Email </label>
+                        <div class="col-8">
                             <input type="text" class="form-control" placeholder="Email" formControlName="email"
                                 pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required>
+                            <!-- </div> -->
                             <div *ngIf="submited && registrationForm.controls.email.errors?.required"
                                 class="alert alert-danger">
                                 Email is required!
@@ -32,8 +36,8 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="mobileNo" class="col-sm-3"> MobileNo </label>
-                        <div class="col-sm-8">
+                        <label for="mobileNo" class="col-4"> MobileNo </label>
+                        <div class="col-8">
 
                             <input type="text" class="form-control" placeholder="Mobile No" maxlength="10" numbersOnly
                                 formControlName="mobileNo">
@@ -49,8 +53,8 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="address" class="col-sm-3"> Address </label>
-                        <div class="col-sm-8">
+                        <label for="address" class="col-4"> Address </label>
+                        <div class="col-8">
                             <input type="text" class="form-control" placeholder="Address" formControlName="address"
                                 required>
                             <div *ngIf="submited && registrationForm.controls.address.errors?.required"
@@ -59,7 +63,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+                        <button type="submit" class="btn btn-primary " style="height: 55px;width: 80px;" >Add User</button>
+                    </div>
+                    <div class="col-sm-6">
+                        <button type="button" class="btn btn-primary " style="height: 55px;width: 80px;" routerLink="/table">Show All User</button>
+                    </div>
                         <!-- <button type="button" class="btn btn-primary" (click)="addOrUpdateUser()">
                             {{ isEditMode? 'Update User': 'Add New'}} </button> -->
                     </div>

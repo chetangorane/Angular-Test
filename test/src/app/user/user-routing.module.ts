@@ -7,7 +7,7 @@ import { TableComponent } from './table/table.component';
 const routes: Routes = [
   {path:'Input', component: InputComponent},
   {path:'', component: InputComponent},
-  {path :'Display', component: TableComponent}
+  {path :'table', component: TableComponent}
 ];
 
 @NgModule({
