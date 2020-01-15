@@ -16,11 +16,11 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Chetan </td>
-                                <td>chetan@gmail.com</td>
-                                <td>44587878656</td>
-                                <td>jhfhjf djhudhud dud</td>
+                            <tr *ngFor="let user of usersList" >
+                                <td>{{user.name}}</td>
+                                <td>{{user.email}}</td>
+                                <td>{{user.mobileNo}}</td>
+                                <td>{{user.address}}</td>
 
                             </tr>
 

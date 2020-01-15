@@ -39,7 +39,7 @@
                         <label for="mobileNo" class="col-4"> MobileNo </label>
                         <div class="col-8">
 
-                            <input type="text" class="form-control" placeholder="Mobile No" maxlength="10" numbersOnly
+                            <input type="number" class="form-control" placeholder="Mobile No" maxlength="10" numbersOnly
                                 formControlName="mobileNo">
                             <div *ngIf="submited && registrationForm.controls.mobileNo.errors?.required"
                                 class="alert alert-danger">
@@ -49,6 +49,7 @@
                                 class="alert alert-danger">
                                 Mobile No length should 10 digit!
                             </div>
+                            
                         </div>
                     </div>
 

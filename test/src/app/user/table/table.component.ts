@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-table',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TableComponent implements OnInit {
 
-  constructor() { }
+  usersList:any;
+  constructor(  private userService:UserService) { }
 
   ngOnInit() {
+this.usersList=this.userService.getUsersData();
+
+
+    console.log(this.usersList);
   }
 
 }

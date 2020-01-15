@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-input',
@@ -9,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class InputComponent implements OnInit {
 
+  submited:boolean;
   registrationForm = this.fb.group({
     name: ['', Validators.required],
     email: ['', Validators.required],
@@ -16,7 +18,7 @@ export class InputComponent implements OnInit {
     address: ['', Validators.required],
   });
 
-  constructor(private fb: FormBuilder, private router: Router) { }
+  constructor(private fb: FormBuilder, private router: Router , private userService:UserService) { }
 
   ngOnInit() {
     this.registrationForm;
@@ -24,8 +26,12 @@ export class InputComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log(this.registrationForm.value);
+this.    submited=true;
+if(this.registrationForm.valid){
 
+  console.log(this.registrationForm.value);
+  this.userService.addToData(this.registrationForm.value);
+}
   }
 
 
