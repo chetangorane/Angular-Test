@@ -7,7 +7,7 @@ import { TableComponent } from './table/table.component';
 export class UserService {
 
   user=[];
-  // router: any;
+
 
   constructor() { 
 
@@ -26,12 +26,7 @@ this.user=data? JSON.parse(data):[];
 
     this.setLocalStorageData(params);
     return this.user;
-    // this.user.push(params);
-    // return localStorage.setItem('usersList','user');
-    // return;
-    // setTimeout(() => {
-    //   this.router.navigate(['./input']);
-    // }, 250);
+    
   }
 
   getUsersData(){

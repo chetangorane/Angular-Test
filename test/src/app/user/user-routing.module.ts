@@ -5,7 +5,7 @@ import { TableComponent } from './table/table.component';
 
 
 const routes: Routes = [
-  {path:'Input', component: InputComponent},
+  {path:'input', component: InputComponent},
   {path:'', component: InputComponent},
   {path :'table', component: TableComponent}
 ];
